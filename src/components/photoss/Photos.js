@@ -25,12 +25,8 @@ const Photos = () => {
     const handleImages = async () => {
         const images = await getRandomPhotos();
         const randomImages = images.sort(() => Math.random() - 0.5);
-        console.log("images:", images);
-        console.log("randomImages:", randomImages);
         setRandomPhotos(randomImages);
     };
-
-    console.log("loading:", loading)
 
     useEffect(() => {
         handleImages();
@@ -56,7 +52,6 @@ const Photos = () => {
                             <img
                                 src={item.url}
                                 alt={item.name}
-                                // style={{ width: item.width, height: item.height}}
                             />
                         </div>
                     ))}
